@@ -19,10 +19,10 @@
 14000000000000p00000000000041
 11111111111111111111111111111
 
-0 food
+0 ball
 1 wall
 2 gate          (only one)
 p pacman        (only one)
-g ghost
+g ghost         (only four)
 3 blank
 4 power ball
