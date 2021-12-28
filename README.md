@@ -104,6 +104,7 @@ Start timer and game.
     score_timer->start(25);
     connect(score_timer, SIGNAL(timeout()), this , SLOT(update_score()));
     game->start();
+}
 ```
 
 ### Step 3: Implement update_score and keyPressEvent
@@ -127,7 +128,8 @@ void MainWindow::update_score()
 Detect key press events from w, a, s, d keys and make pacman move.
 
 ```cpp
-void MainWindow::keyPressEvent(QKeyEvent *e) {
+void MainWindow::keyPressEvent(QKeyEvent *e)
+{
     switch (e->key()) {
     case Qt::Key_W:
         game->pacman_next_direction(GameObject::Up);
