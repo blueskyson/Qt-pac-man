@@ -19,14 +19,14 @@ This is developed on Qt 6.2.1. If you want to develop under Qt 6, you may need t
 
 You can take reference from [mainwindow.cpp](https://github.com/blueskyson/Qt-pac-man/blob/master/source/mainwindow.cpp) and [mainwindow.h](https://github.com/blueskyson/Qt-pac-man/blob/master/source/mainwindow.h) for detailed code. Assume that the following steps are implemented in a `QMainWindow`.
 
-**Step 1: declare objects and functions**  
-Add a `QGraphicsView` named `graphicsView` for displaying game. (In the source code, `graphicsView` is defined in [mainwindow.ui](https://github.com/blueskyson/Qt-pac-man/blob/master/mainwindow.ui).)  
-Add a `QLabel` named `score` for displaying score.  
-Add two `QLabel`s named `win_label` and `lose_label` for displaying when game is over.  
-Add a `QTimer` named `score_timer` for updating current score.  
-Declare `keyPressEvent` override function.  
-Declare `update_score` slot function.  
-Include [game.h](https://github.com/blueskyson/Qt-pac-man/blob/master/source/game.h).
+### Step 1: declare objects and functions  
+- Add a `QGraphicsView` named `graphicsView` for displaying game. (In the source code, `graphicsView` is defined in [mainwindow.ui](https://github.com/blueskyson/Qt-pac-man/blob/master/mainwindow.ui).)  
+- Add a `QLabel` named `score` for displaying score.  
+- Add two `QLabel`s named `win_label` and `lose_label` for displaying when game is over.  
+- Add a `QTimer` named `score_timer` for updating current score.  
+- Declare `keyPressEvent` override function.  
+- Declare `update_score` slot function.  
+- Include [game.h](https://github.com/blueskyson/Qt-pac-man/blob/master/source/game.h).
 
 ```cpp
 #include <QMainWindow>
@@ -59,7 +59,7 @@ private:
 };
 ```
 
-**Step 2: initialize objects**  
+### Step 2: initialize objects
 
 Setup `graphicsView` in the constructor of `MainWindow`.
 
@@ -98,7 +98,7 @@ Initialize labels and the timer.
     // setup labels' properties here...
 ```
 
-Start game.
+Start timer and game.
 
 ```cpp
     score_timer->start(25);
@@ -106,7 +106,7 @@ Start game.
     game->start();
 ```
 
-**Step 3: Implement update_score and keyPressEvent**
+### Step 3: Implement update_score and keyPressEvent
 
 Update score when `score_timer` ticks. If the pacman eats all points, `game->stat` will change to `Game::Win`. If a ghost catches the pacman, `game->stat` will change to `Game::Lose`. Stop timer and show `win_label` or `lose_label` when game is over.
 
